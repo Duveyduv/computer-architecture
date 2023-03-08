@@ -3,13 +3,11 @@
   "configurations": [
     {
       "name": "C/C++ Runner: Debug Session",
-      "type": "cppvsdbg",
+      "type": "lldb",
       "request": "launch",
       "args": [],
-      "stopAtEntry": false,
-      "console": "externalTerminal",
-      "cwd": "c:/Users/brand/OneDrive/Documents/School/COSC/dove's droplet",
-      "program": "c:/Users/brand/OneDrive/Documents/School/COSC/dove's droplet/build/Debug/outDebug"
+      "cwd": "/Users/brandondove/Documents/GitHub/droplet-directory",
+      "program": "/Users/brandondove/Documents/GitHub/droplet-directory/build/Debug/outDebug"
     }
   ]
 }

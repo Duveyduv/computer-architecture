@@ -69,43 +69,74 @@ asm_main:
         call read_int           ; reading that value into eax
         mov [num_choice], eax   ; mov eax into num_choice
 
-        mov ebx, 2
-        cmp eax, ebx
-        jz not_imp
-        
-        cmp eax, eax
-        je binary
+        mov ebx, 1              ; mov 1 into ebx
+        cmp eax, ebx            ; compare input to ebx, if so... input - ebx = 0
+        je not_imp              ; jump to not_imp which prints out the message required.
 
         
+        mov cx, 0               ; zeroing out cx for division
+        mov bx, 10              ; moving 10 into bx so we can divide by it
+        cmp eax, eax            ; comparing input with itself, so always zero so we can do option #2
+        mov eax, [number]       ; moving our selected number into eax
+        je reverse_num          ; if they numbers are equal, jump to reverse_num loop
+        
+       
 
 not_imp:
-        call print_nl
-        mov eax, oops
-        call print_string
-        call print_nl
-        mov eax, thanks
-        call print_nl
-        call print_string
+        call print_nl           ; newline
+        mov eax, oops           ; "NOT IMPLEMENTED"
+        call print_string       ; printing it
+        call print_nl           ; newline
+        call print_nl           ; newline
+        mov eax, thanks         ; "Thanks for playing!"
+        call print_string       ; printing it
+        call print_nl           ; newline
 
 
-binary:
-        mov eax, [number]       ; moving our input number into eax
+reverse_num:
+            xchg ax,cx          ; since we put our number into eax, we are gonna move the values over to cx.
+            mul bx              ; multiply ax by bx
+            xchg ax,cx          ; changing the values back
+            mov dx,0            ; moving 0 into dx so we can divide
+            div bx              ; division and modulo
+            add cx,dx           ; dx holds our number we want to put first
+            cmp ax, 0           ; compare ax and 0, if not...
+            ja reverse_num      ; continue through loop.
+            mov ax, cx          ; moving our reversed value into ax
+            call print_nl       ; newline
+            call print_int      ; printing it.
+
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        ; mov al, [number]
+        ; cdq
+        ; mov ebx, 10
+        ; div ebx
+        ; call dump_regs 1
+        ; mov eax, edx
+        ; call print_int
+        
+        
+        
+        
+        
+
 
         
-        cdq                     ; initializing edx
-        mov ecx, 2              ; moving 2 into ecx so we can do eax / 2
-        div ecx                 ; eax = eax / ecx
-        mov ebx, edx            ; moving remainder into ebx
-        shl ebx, 1              ; shifting ebx by 1
         
-        mov [number], eax
-
-        cmp eax, 0
-        jne binary
 
 
 
-        call dump_regs 1
 
         
         

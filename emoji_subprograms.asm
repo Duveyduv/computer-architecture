@@ -49,7 +49,6 @@ asm_main:
         ret
 
 print_2_rows:  			 	; subprogram that prints 1st 2 rows of structure
-	call dump_stack 1, 4, 0
 
 	mov eax, blossom
 	call print_string
