@@ -9,7 +9,7 @@ LDFLAGS := -m32
 CC		:= gcc
 CXX		:= g++
 CXXFLAGS := -m32
-TARGETS := emoji_subprograms cake project07_brandon_dove project06_brandon_dove control_structures loops max conditionals project05_brandon_dove second_exercise project04_brandon_dove first_exercise skel prime math sub1 sub2 sub3 sub4 sub5 sub6 first memex dmaxt fprime quadt test_big_int
+TARGETS := number_operations emoji_subprograms cake project07_brandon_dove project06_brandon_dove control_structures loops max conditionals project05_brandon_dove second_exercise project04_brandon_dove first_exercise skel prime math sub1 sub2 sub3 sub4 sub5 sub6 first memex dmaxt fprime quadt test_big_int
 DEP := driver.o asm_io.o
 
 .PHONY: clean
@@ -35,6 +35,8 @@ project07_brandon_dove: $(DEP)
 control_structures: $(DEP)
 
 emoji_subprograms: $(DEP)
+
+number_operations: $(DEP)
 
 cake: $(DEP)
 
@@ -103,6 +105,8 @@ second_exercise.o: asm_io.inc
 loops.o: asm_io.inc
 
 control_structures.o: asm_io.inc
+
+number_operations.o: asm_io.inc
 
 emoji_subprograms.o: asm_io.inc
 
