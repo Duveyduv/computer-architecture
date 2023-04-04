@@ -9,7 +9,7 @@ LDFLAGS := -m32
 CC		:= gcc
 CXX		:= g++
 CXXFLAGS := -m32
-TARGETS := number_operations emoji_subprograms cake project07_brandon_dove project06_brandon_dove control_structures loops max conditionals project05_brandon_dove second_exercise project04_brandon_dove first_exercise skel prime math sub1 sub2 sub3 sub4 sub5 sub6 first memex dmaxt fprime quadt test_big_int
+TARGETS := fib factorial taking_in_strings c_functions project08_brandon_dove emoji_subprograms cake project07_brandon_dove project06_brandon_dove control_structures loops max conditionals project05_brandon_dove second_exercise project04_brandon_dove first_exercise skel prime math sub1 sub2 sub3 sub4 sub5 sub6 first memex dmaxt fprime quadt test_big_int
 DEP := driver.o asm_io.o
 
 .PHONY: clean
@@ -32,11 +32,21 @@ project06_brandon_dove: $(DEP)
 
 project07_brandon_dove: $(DEP)
 
+project08_brandon_dove: $(DEP)
+
 control_structures: $(DEP)
 
 emoji_subprograms: $(DEP)
 
 number_operations: $(DEP)
+
+c_functions: $(DEP)
+
+taking_in_strings: $(DEP)
+
+factorial: $(DEP)
+
+fib: $(DEP)
 
 cake: $(DEP)
 
@@ -109,6 +119,16 @@ control_structures.o: asm_io.inc
 number_operations.o: asm_io.inc
 
 emoji_subprograms.o: asm_io.inc
+
+project08_brandon_dove.o: asm_io.inc
+
+c_functions.o: asm_io.inc
+
+taking_in_strings.o: asm_io.inc
+
+fib.o: asm_io.inc
+
+factorial.o: asm_io.inc
 
 cake.o: asm_io.inc
 
