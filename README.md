@@ -1,2 +1,2 @@
 # droplet-directory
-COSC ARCH
+from my cosc arch class in 2023
